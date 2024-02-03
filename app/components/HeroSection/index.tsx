@@ -14,10 +14,10 @@ const HeroSection = () => {
         <div className="col-span-7 place-self-center text-center sm:text-left animate-emerge">
           <h1 className="text-white text-4xl sm:text-5l lg:text-8xl font-extrabold">
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 to-pink-600 ">
-              Howdy, I'm
+              Howdy, I&apos;m
             </span>
             <br />
-            <div className="h-[100px] lg:h-[250px] pt-4">
+            <div className="h-[100px] lg:h-[250px] pt-5">
               <TypeAnimation
                 sequence={animationSequence}
                 wrapper="span"
