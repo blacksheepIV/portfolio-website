@@ -29,8 +29,8 @@ const HeroSection = () => {
 
           <p className="text-[#ADB7BE] text-base sm:text-lg lg:text-xl mb-6">
             Hailing from the vibrant city of Istanbul, Turkey. With more than 5
-            years of coding under my belt, I'm all about bringing web interfaces
-            to life! Reach out if you'd like to know more!
+            years of coding under my belt, I&apos;m all about bringing web
+            interfaces to life! Reach out if you&apos;d like to know more!
           </p>
           <div>
             <button className="text-white rounded-full w-full sm:w-fit bg-gradient-to-br from-blue-500 via-purple-500 to-pink-500 px-1 py-1">
