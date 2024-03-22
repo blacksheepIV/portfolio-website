@@ -28,5 +28,6 @@ html {
 
 body {
   color: rgb(var(--foreground));
-  background: rgb(var(--background-end))
+  background: rgb(var(--background-end));
+  overflow-x: hidden;
 }
