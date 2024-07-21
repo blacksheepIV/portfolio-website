@@ -5,7 +5,7 @@ import { TypeAnimation } from 'react-type-animation'
 const HeroSection = () => {
   const animationSequence: Array<string | number> = [
     'Foroogh',
-    1000,
+    1100,
     'A Frontend Developer',
   ]
   return (

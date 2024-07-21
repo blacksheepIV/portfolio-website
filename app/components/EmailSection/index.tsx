@@ -3,8 +3,9 @@ import { useState } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
 
-import GitHub from '@/public/images/socials/github.svg'
-import LinkedIn from '@/public/images/socials/inkedin.svg'
+import { Github } from '@/app/components/Icons/index'
+import { Linkedin } from '@/app/components/Icons/index'
+import { Stackoverflow } from '@/app/components/Icons/index'
 
 const EmailSection = () => {
   const [emailSubmitted, setEmailSubmitted] = useState(false)
@@ -39,7 +40,10 @@ const EmailSection = () => {
   }
 
   return (
-    <section className="grid md:grid-cols-2 my-12 md:my-12 py-24 gap-4">
+    <section
+      className="grid md:grid-cols-2 my-12 md:my-12 py-24 gap-4"
+      id="contact"
+    >
       <div>
         <h5 className="text-xl font-bold text-white my-2">
           Let&apos;s Connect
@@ -51,22 +55,34 @@ const EmailSection = () => {
         </p>
         <div className="socials flex flex-row align-middle gap-2">
           <Link href="https://github.com/blacksheepIV" target="_blank">
-            <Image
-              src={GitHub}
-              alt="blacksheep's github"
+            <Github
               width={50}
               height={50}
+              color="white"
+              className="hover:fill-indigo-700"
             />
           </Link>
           <Link
             href="https://www.linkedin.com/in/foroogh-fallahfar/"
             target="_blank"
           >
-            <Image
-              src={LinkedIn}
-              alt="blacksheep's github"
+            <Linkedin
               width={50}
               height={50}
+              color="white"
+              className="hover:fill-indigo-700"
+            />
+          </Link>
+
+          <Link
+            href="https://stackoverflow.com/users/1932617/blacksheep"
+            target="_blank"
+          >
+            <Stackoverflow
+              width={50}
+              height={50}
+              color="white"
+              className="hover:fill-indigo-700"
             />
           </Link>
         </div>
@@ -91,7 +107,7 @@ const EmailSection = () => {
                 id="email"
                 required
                 className="bg-[#18191E] border border-[#33353F] placeholder-[#9CA2A9] text-gray-100 text-sm rounded-lg block w-full p-2.5"
-                placeholder="blahblah@google.com"
+                placeholder="blahblah@blah..."
               />
             </div>
             <div className="mb-6">
