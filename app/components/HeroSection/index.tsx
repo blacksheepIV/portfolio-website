@@ -1,6 +1,7 @@
 'use client'
 import Image from 'next/image'
 import { TypeAnimation } from 'react-type-animation'
+import { useRouter } from 'next/navigation'
 
 const HeroSection = () => {
   const animationSequence: Array<string | number> = [
@@ -8,6 +9,16 @@ const HeroSection = () => {
     1100,
     'A Frontend Developer',
   ]
+  const router = useRouter()
+  const scrollToSection = (sectionId: string) => {
+    const section = document.getElementById(sectionId)
+    if (section) {
+      section.scrollIntoView({ behavior: 'smooth' })
+
+      // Update the URL without reloading the page
+      router.push(`#${sectionId}`, undefined)
+    }
+  }
   return (
     <section>
       <div className="grid grid-cols-1 sm:grid-cols-12 grid-flow-dense">
@@ -33,7 +44,10 @@ const HeroSection = () => {
             interfaces to life! Reach out if you&apos;d like to know more!
           </p>
           <div>
-            <button className="text-white rounded-full w-full sm:w-fit bg-gradient-to-br from-blue-500 via-purple-500 to-pink-500 px-1 py-1">
+            <button
+              className="text-white rounded-full w-full sm:w-fit bg-gradient-to-br from-blue-500 via-purple-500 to-pink-500 px-1 py-1"
+              onClick={() => scrollToSection('contact')}
+            >
               <span className="block rounded-full bg-[#121212] hover:bg-slate-800 px-6 py-3">
                 Contact me
               </span>

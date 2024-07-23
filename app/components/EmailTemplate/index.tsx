@@ -1,13 +1,18 @@
 import { ReactElement } from 'react'
 
 interface EmailTemplateProps {
-  firstName: string
+  email: string
+  message: string
 }
 
 export const EmailTemplate = ({
-  firstName,
+  email,
+  message,
 }: Readonly<EmailTemplateProps>): ReactElement => (
   <div>
-    <h1>Thanks for the message, {firstName}!</h1>
+    <h1>Contact Request</h1>
+    <p>New message from {email}</p>
+    <p>Subject:</p>
+    <p>{message}</p>
   </div>
 )

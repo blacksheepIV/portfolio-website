@@ -1,7 +1,6 @@
 'use client'
-import { useState } from 'react'
+import { useState, FormEvent } from 'react'
 import Link from 'next/link'
-import Image from 'next/image'
 
 import { Github } from '@/app/components/Icons/index'
 import { Linkedin } from '@/app/components/Icons/index'
@@ -10,14 +9,17 @@ import { Stackoverflow } from '@/app/components/Icons/index'
 const EmailSection = () => {
   const [emailSubmitted, setEmailSubmitted] = useState(false)
 
-  const handleSubmit = async (e: any) => {
+  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault()
+    const { email, subject, message } = e.currentTarget
+
     const data = {
-      email: e?.target?.email?.value,
-      subject: e?.target?.subject?.value,
-      message: e?.target?.message?.value,
+      email: email.value,
+      subject: subject.value,
+      message: message.value,
     }
-    const JSONdata = JSON.stringify(data)
+    const JSONdata: string = JSON.stringify(data)
+
     const endpoint = '/api/send'
 
     const options = {
@@ -31,10 +33,9 @@ const EmailSection = () => {
     }
 
     const response = await fetch(endpoint, options)
-    const resData = await response.json()
+    //const resData = await response.json()
 
     if (response.status === 200) {
-      // console.log("Message sent.");
       setEmailSubmitted(true)
     }
   }
@@ -53,8 +54,12 @@ const EmailSection = () => {
           open. Whether you have a question or just want to say hi, I&apos;ll
           try my best to get back to you!
         </p>
-        <div className="socials flex flex-row align-middle gap-2">
-          <Link href="https://github.com/blacksheepIV" target="_blank">
+        <div className="socials flex flex-row align-middle gap-3">
+          <Link
+            href="https://github.com/blacksheepIV"
+            target="_blank"
+            className="transition-all hover:scale-150"
+          >
             <Github
               width={50}
               height={50}
@@ -65,6 +70,7 @@ const EmailSection = () => {
           <Link
             href="https://www.linkedin.com/in/foroogh-fallahfar/"
             target="_blank"
+            className="transition-all hover:scale-150"
           >
             <Linkedin
               width={50}
@@ -77,6 +83,7 @@ const EmailSection = () => {
           <Link
             href="https://stackoverflow.com/users/1932617/blacksheep"
             target="_blank"
+            className="transition-all hover:scale-150"
           >
             <Stackoverflow
               width={50}
@@ -142,7 +149,7 @@ const EmailSection = () => {
             </div>
             <button
               type="submit"
-              className="bg-violet-900 hover:bg-primary-600 text-white font-medium py-2.5 px-5 rounded-lg w-full"
+              className="bg-indigo-500  hover:bg-indigo-700 text-white font-medium py-2.5 px-5 rounded-lg w-full"
             >
               Send Message
             </button>

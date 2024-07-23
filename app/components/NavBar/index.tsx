@@ -24,7 +24,7 @@ const NavBar = () => {
               <li key={index}>
                 <Link
                   href={link.path}
-                  className="block py-2 pl-3 pr-4 text-white sm:text-xl rounded md:p-0 hover:text-sky_magenta-400 cursor-pointer"
+                  className="block py-2 pl-3 pr-4 text-white sm:text-xl rounded md:p-0 hover:text-indigo-700 cursor-pointer"
                 >
                   {link.title}
                 </Link>
