@@ -11,8 +11,10 @@ const Footer = () => {
   return (
     <footer className="footer w-screen border border-t-[#33353f] border-b-transparent border-l-transparent flex flex-col justify-start align-middle overflow-hidden">
       <div className="container flex gap-16 py-4 animate-scroll">
-        {messages.map(message => (
-          <div className="whitespace-nowrap">{message}</div>
+        {messages.map((message, index) => (
+          <div key={index} className="whitespace-nowrap">
+            {message}
+          </div>
         ))}
       </div>
     </footer>
