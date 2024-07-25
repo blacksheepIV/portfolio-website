@@ -77,8 +77,9 @@ const config: Config = {
         },
       },
       animation: {
-        floating: 'floating 3s ease-in-out infinete',
+        floating: 'floating 3s ease-in-out infinite',
         emerge: 'emerge 2s ease-out 1',
+        scroll: 'scroll 25s linear infinite',
       },
       keyframes: {
         floating: {
@@ -90,6 +91,14 @@ const config: Config = {
           '0%': { opacity: '0', scale: '0.5' },
 
           '100%': { opacity: '1', scale: '1' },
+        },
+        scroll: {
+          '0%': {
+            transform: 'translateX(100%)',
+          },
+          '100%': {
+            transform: 'translateX(-100%)',
+          },
         },
       },
       boxShadow: {
