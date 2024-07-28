@@ -1,0 +1,13 @@
+.subtitle__wrapper {
+  animation: scroll linear calc(var(--scroll-time) * 1s) infinite;
+ 
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}

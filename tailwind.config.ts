@@ -79,7 +79,7 @@ const config: Config = {
       animation: {
         floating: 'floating 3s ease-in-out infinite',
         emerge: 'emerge 2s ease-out 1',
-        scroll: 'scroll 25s linear infinite',
+        scroll: 'scroll 23s linear infinite',
       },
       keyframes: {
         floating: {
